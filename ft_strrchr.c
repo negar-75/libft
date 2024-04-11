@@ -14,24 +14,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char			*ptr;
-	unsigned int	len;
+	char	*ptr;
 
 	ptr = NULL;
-	len = ft_strlen(s);
-	if (c == 0)
-		return ((char *)(s + len));
-	if (c > 256)
-		return ((char *)s);
-	while (len > 0)
+	while (*s)
 	{
-		if (s[len - 1] == c)
-		{
-			ptr = (char *)&s[len - 1];
-			break ;
-		}
-		len--;
+		if (*s == (unsigned char)c)
+			ptr = (char *)s;
+		s++;
 	}
+	if (c == 0)
+		return ((char *)s);
 	return (ptr);
 }
 
@@ -60,20 +53,21 @@ char	*ft_strrchr(const char *s, int c)
 // 			printf("Test passed: Returned \"%s\" as expected\n", result);
 // 		else
 // 			printf("Test failed: Returned \"%s\", expected \"%s\"\n", result,
-//				expected);
+// 				expected);
 // 	}
 // }
 
 // int	main(void)
 // {
-// 	// Test cases
-// 	test_ft_strrchr("Hello, World!", 'o', "orld!");
-// 	test_ft_strrchr("Hello, World!", 'H', "Hello, World!");
-// 	test_ft_strrchr("Hello, World!", '!', "!");
-// 	test_ft_strrchr("Hello, World!", 'z', NULL);
+// 	//Test cases
+// 	//test_ft_strrchr("Hello, World!", 'o', "orld!");
+// 	//test_ft_strrchr("Hello, World!", 'H', "Hello, World!");
+// 	//test_ft_strrchr("Hello, World!", '!', "!");
+// 	//test_ft_strrchr("Hello, World!", 'z', NULL);
 
-// 	// Test with an empty string
-// 	test_ft_strrchr("", 'a', NULL);
-
-// 	return (0);
+// 	//Test with an empty string
+// 	//test_ft_strrchr("", 'a', NULL);
+// 	printf("my ans %s\n",ft_strrchr("teste", 't'));
+// 	printf("lib ans %s",strrchr("teste", 't'));
+//     return (0);
 // }

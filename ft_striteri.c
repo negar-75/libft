@@ -26,6 +26,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		s++;
 	}
 }
+
 void	f(unsigned int index, char *str)
 {
 	if (index % 2 == 0)

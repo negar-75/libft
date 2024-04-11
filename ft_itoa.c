@@ -16,6 +16,8 @@ static int	num_len(long int nbr)
 {
 	int	i;
 
+	if (nbr == 0)
+		return (1);
 	i = 0;
 	if (nbr < 0)
 	{
@@ -30,6 +32,12 @@ static int	num_len(long int nbr)
 	return (i);
 }
 
+char	*ft_zero(char *arr)
+{
+	arr[0] = '0';
+	return (arr);
+}
+
 char	*ft_itoa(int nbr)
 {
 	long int	num;
@@ -39,12 +47,11 @@ char	*ft_itoa(int nbr)
 	num = nbr;
 	len = num_len(num);
 	arr = malloc((len + 1) * sizeof(char));
+	if (!arr)
+		return (NULL);
 	arr[len] = '\0';
 	if (num == 0)
-	{
-		arr[0] = '0';
-		return (arr);
-	}
+		return (ft_zero(arr));
 	if (num < 0)
 	{
 		arr[0] = '-';
@@ -64,29 +71,28 @@ char	*ft_itoa(int nbr)
 // 	printf("Testing ft_itoa(%d)\n", nbr);
 
 // 	if (strcmp(result, expected) == 0)
-// 		printf("Test passed: Returned \"%s\" as expected\n", result);
+// 		printf("Test passed: Returned \"%s\" as 
+//      expected\n", result);
 // 	else
-// 		printf("Test failed: Returned \"%s\", expected \"%s\"\n", result, expected);
+// 		printf("Test failed: Returned \"%s\", 
+//       expected \"%s\"\n", result, expected);
 
 // 	free(result);
 // }
 
 // int	main(void)
 // {
-// 	printf("1. Test with positive numbers:\n");
-// 	test_ft_itoa(12345, "12345");
-// 	test_ft_itoa(987654321, "987654321");
-	
-// 	printf("\n2. Test with negative numbers:\n");
-// 	test_ft_itoa(-12345, "-12345");
-// 	test_ft_itoa(-987654321, "-987654321");
+// 	// printf("1. Test with positive numbers:\n");
+// 	// test_ft_itoa(12345, "12345");
+// 	// test_ft_itoa(987654321, "987654321");	
+// 	// printf("\n2. Test with negative numbers:\n");
+// 	// test_ft_itoa(-12345, "-12345");
+// 	// test_ft_itoa(-987654321, "-987654321");
 
-// 	printf("\n3. Test with zero:\n");
-// 	test_ft_itoa(0, "0");
-
-// 	printf("\n4. Test with INT_MAX and INT_MIN values:\n");
-// 	test_ft_itoa(INT_MAX, "2147483647");
-// 	test_ft_itoa(INT_MIN, "-2147483648");
-
+// 	// printf("\n3. Test with zero:\n");
+// 	// test_ft_itoa(0, "0");
+// 	// printf("\n4. Test with INT_MAX and INT_MIN values:\n");
+// 	// test_ft_itoa(INT_MAX, "2147483647");
+// 	// test_ft_itoa(INT_MIN, "-2147483648");
 // 	return (0);
 // }

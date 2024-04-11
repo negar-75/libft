@@ -45,9 +45,11 @@ int	ft_atoi(const char *str)
 // 	printf("Testing ft_atoi(\"%s\")\n", s);
 
 // 	if (result_ft_atoi == result_atoi)
-// 		printf("Test passed: ft_atoi returned \"%d\" as , atoi returned \"%d\"\n", result_ft_atoi, result_atoi);
+// 		printf("Test passed: ft_atoi returned \"%d\" as , 
+//      atoi returned \"%d\"\n", result_ft_atoi, result_atoi);
 // 	else
-// 		printf("Test failed: ft_atoi returned \"%d\", atoi returned \"%d\"\n", result_ft_atoi, result_atoi);
+// 		printf("Test failed: ft_atoi returned \"%d\", 
+//      atoi returned \"%d\"\n", result_ft_atoi, result_atoi);
 // }
 
 // int	main(void)
@@ -55,41 +57,31 @@ int	ft_atoi(const char *str)
 // 	printf("1. Test with positive numbers:\n");
 // 	test_ft_atoi("12345");
 // 	test_ft_atoi("987654321");
-	
 // 	printf("\n2. Test with negative numbers:\n");
 // 	test_ft_atoi("-12345");
 // 	test_ft_atoi("-987654321");
-
 // 	printf("\n3. Test with leading whitespaces:\n");
 // 	test_ft_atoi("    12345");
 // 	test_ft_atoi("\t\t\t67890");
-
 // 	printf("\n4. Test with trailing whitespaces:\n");
 // 	test_ft_atoi("12345    ");
 // 	test_ft_atoi("67890\t\t\t");
-
 // 	printf("\n5. Test with '+' sign:\n");
 // 	test_ft_atoi("+12345");
 // 	test_ft_atoi("+67890");
-
 // 	printf("\n6. Test with '-' sign:\n");
 // 	test_ft_atoi("-12345");
 // 	test_ft_atoi("-67890");
-
 // 	printf("\n7. Test with invalid characters before a number:\n");
 // 	test_ft_atoi("abc12345");  // atoi returns 0 for this case
 // 	test_ft_atoi("   xyz67890");
-
 // 	printf("\n8. Test with invalid characters after a number:\n");
 // 	test_ft_atoi("12345abc");  // atoi stops at the first invalid character
 // 	test_ft_atoi("67890   xyz");
-
 // 	printf("\n9. Test with empty string:\n");
 // 	test_ft_atoi("");  // atoi returns 0 for this case
-
 // 	printf("\n10. Test with INT_MAX and INT_MIN values:\n");
 // 	test_ft_atoi("2147483647");  // INT_MAX
 // 	test_ft_atoi("-2147483648"); // INT_MIN
-
 // 	return (0);
 // }

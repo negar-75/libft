@@ -63,6 +63,8 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	words = ft_world_count(s, c);
 	arr = (char **)malloc((words + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
 	while (*s)
 	{
 		while (*s && *s == c)

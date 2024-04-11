@@ -15,19 +15,20 @@
 char	*ft_strnstr(const char *string, const char *substring, size_t len)
 {
 	size_t	i;
-	size_t	len1;
+	size_t	j;
 
-	if (!substring || !*substring)
+	if (!*substring)
 		return ((char *)string);
 	i = 0;
-	len1 = ft_strlen(substring) - 1;
 	while (i < len && string[i] != '\0')
 	{
-		if (string[i] == *substring)
+		j = 0;
+		while (string[i + j] == substring[j]
+			&& substring[j] != '\0' && i + j < len)
 		{
-			if (*(substring + 1) == '\0')
-				return ((char *)&string[i - len1]);
-			substring++;
+			j++;
+			if (substring[j] == '\0')
+				return ((char *)&string[i]);
 		}
 		i++;
 	}
@@ -64,16 +65,17 @@ char	*ft_strnstr(const char *string, const char *substring, size_t len)
 // int	main(void)
 // {
 // 	// Test cases
-// 	test_ft_strnstr("Hello, World!", "World", 12, "World!");
-// 	test_ft_strnstr("Hello, World!", "Hello", 12, "Hello, World!");
-// 	test_ft_strnstr("Hello, World!", "o", 12, "o, World!");
-// 	test_ft_strnstr("Hello, World!", "z", 12, NULL);
+// 	// test_ft_strnstr("Hello, World!", "World", 12, "World!");
+// 	// test_ft_strnstr("Hello, World!", "Hello", 12, "Hello, World!");
+// 	// test_ft_strnstr("Hello, World!", "o", 12, "o, World!");
+// 	// test_ft_strnstr("Hello, World!", "z", 12, NULL);
 
 // 	// Test with an empty substring
-// 	test_ft_strnstr("Hello, World!", "", 12, "Hello, World!");
+// 	// test_ft_strnstr("Hello, World!", "", 12, "Hello, World!");
 
 // 	// Test with a substring longer than the string
-// 	test_ft_strnstr("Hello", "Hello, World!", 12, NULL);
-
+// 	// test_ft_strnstr("Hello", "Hello, World!", 12, NULL);
+// 	printf("my ans %s\n",ft_strnstr("fake", ((void *)0), 3));
+// 	printf("lib ans %s",strnstr("fake", ((void *)0), 3));
 // 	return (0);
 // }
