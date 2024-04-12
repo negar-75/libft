@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:28:33 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/09 16:02:07 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/12 18:26:43 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 }
 // int main()
 // {
-// 	printf("%d\n",(ft_strncmp("testa", "testz", 6)));
-// 	printf("%d",strncmp("testa", "testz", 6));
+// 	printf("%d\n",(ft_strncmp("test\0", "test\200", 6)));
+// 	printf("%d",strncmp("test\0", "test\2000", 6));
 // 	return 0;
 // }
