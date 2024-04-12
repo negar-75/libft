@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:27:22 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/09 14:27:53 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/12 10:24:09 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,20 @@ char	*ft_strnstr(const char *string, const char *substring, size_t len)
 // 	}
 // }
 
-// int	main(void)
-// {
-// 	// Test cases
-// 	// test_ft_strnstr("Hello, World!", "World", 12, "World!");
-// 	// test_ft_strnstr("Hello, World!", "Hello", 12, "Hello, World!");
-// 	// test_ft_strnstr("Hello, World!", "o", 12, "o, World!");
-// 	// test_ft_strnstr("Hello, World!", "z", 12, NULL);
+//int	main(void)
+//{
+	// Test cases
+	// test_ft_strnstr("Hello, World!", "World", 12, "World!");
+	// test_ft_strnstr("Hello, World!", "Hello", 12, "Hello, World!");
+	// test_ft_strnstr("Hello, World!", "o", 12, "o, World!");
+	// test_ft_strnstr("Hello, World!", "z", 12, NULL);
 
-// 	// Test with an empty substring
-// 	// test_ft_strnstr("Hello, World!", "", 12, "Hello, World!");
+	// Test with an empty substring
+	// test_ft_strnstr("Hello, World!", "", 12, "Hello, World!");
 
-// 	// Test with a substring longer than the string
-// 	// test_ft_strnstr("Hello", "Hello, World!", 12, NULL);
-// 	printf("my ans %s\n",ft_strnstr("fake", ((void *)0), 3));
-// 	printf("lib ans %s",strnstr("fake", ((void *)0), 3));
-// 	return (0);
-// }
+	// Test with a substring longer than the string
+	// test_ft_strnstr("Hello", "Hello, World!", 12, NULL);
+	// printf("my ans %s\n",ft_strnstr("fake", ((void *)0), 3));
+	// printf("lib ans %s",strnstr("fake", ((void *)0), 3));
+	// return (0);
+//}

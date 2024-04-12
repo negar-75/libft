@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 10:33:21 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/09 14:55:30 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/12 11:35:46 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 // int	main(void)
 // {
-// 	char target[21] = "a shiny white sphere";
-// 	char *p = target + 8;      // s1
-// 	char *source = target + 2; // s2
-// 	ft_memmove(p, source, 14);
+// 	char target[21] = "I am negar";
+// 	char *p = target + 2;   // s1
+// 	char *source = target; // s2
+// 	ft_memmove(p, source, 4);
 // 	printf("my mem %s\n", target);
-// 	// memmove(p, source, 7);
+// 	// memmove(p, source, 4);
 // 	// printf("original %s\n", target);
 // 	return (0);
 // }

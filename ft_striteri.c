@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:59:32 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/09 16:23:51 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/12 10:38:03 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	}
 }
 
-void	f(unsigned int index, char *str)
-{
-	if (index % 2 == 0)
-		*str = *str + 1;
-	else
-		*str = *str;
-}
+// void	f(unsigned int index, char *str)
+// {
+// 	if (index % 2 == 0)
+// 		*str = *str + 1;
+// 	else
+// 		*str = *str;
+// }
 // int main()
 // {
 // 	char str1[] = "abc";

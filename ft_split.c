@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:58:29 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/09 15:58:33 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/12 11:36:53 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_world_count(char const *s, char c)
 {
-	static int		world_count;
+	int				world_count;
 	unsigned int	i;
 
 	i = 0;
@@ -83,8 +83,8 @@ char	**ft_split(char const *s, char c)
 
 // int	main(void)
 // {
-// 	char	str[] = "it is today";
-// 	char	c = ' ';
+// 	char	str[] = "";
+// 	char	c = 'b';
 //     char	**spt = ft_split(str, c);
 // 	int	i = 0;
 // 	while (spt[i] != NULL)
