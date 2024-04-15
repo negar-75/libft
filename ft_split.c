@@ -14,17 +14,17 @@
 
 static int	ft_world_count(char const *s, char c)
 {
-	int				world_count;
-	unsigned int	i;
+	int	world_count;
+	int	i;
 
-	i = 0;
 	world_count = 0;
-	while (s[i] != '\0')
+	i = 0;
+	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i])
-			++world_count;
+		if (s[i] && s[i] != c)
+			world_count++;
 		while (s[i] && s[i] != c)
 			i++;
 	}
@@ -38,9 +38,7 @@ char	*ft_allocate_word(char const *s, char c)
 
 	i = 0;
 	while (s[i] && s[i] != c)
-	{
 		i++;
-	}
 	new_word = (char *)malloc((i + 1) * sizeof(char));
 	if (!new_word)
 		return (NULL);
@@ -54,31 +52,53 @@ char	*ft_allocate_word(char const *s, char c)
 	return (new_word);
 }
 
-char	**ft_split(char const *s, char c)
+static void	free_split(char **arr, int j)
 {
-	int		words;
-	int		j;
-	char	**arr;
-
-	j = 0;
-	words = ft_world_count(s, c);
-	arr = (char **)malloc((words + 1) * sizeof(char *));
-	if (!arr)
-		return (NULL);
-	while (*s)
+	while (j > 0)
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s && *s != c)
+		free(arr[--j]);
+	}
+	free(arr);
+}
+
+static char	**split(char **arr, const char *s, char c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
 		{
-			arr[j] = ft_allocate_word(s, c);
+			arr[j] = ft_allocate_word(&s[i], c);
+			if (!arr[j])
+			{
+				free_split(arr, j);
+				return (NULL);
+			}
 			j++;
-			while (*s && *s != c)
-				s++;
+			while (s[i] && s[i] != c)
+				i++;
 		}
 	}
 	arr[j] = NULL;
 	return (arr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		words;
+	char	**arr;
+
+	words = ft_world_count(s, c);
+	arr = (char **)malloc((words + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	return (split(arr, s, c));
 }
 
 // int	main(void)
