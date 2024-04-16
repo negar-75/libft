@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:33:47 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/12 09:52:05 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/15 15:12:03 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int	main(void)
 // {
-//   printf("%s",(strcmp(ft_substr("tripouille", 8,
-// 				12),"le") == 0 ? "true" : "false"));
+//   char* temp;
+//   temp = ft_substr("tripouille", 13,12);
+//   printf("%s",temp);
+//   free(temp);
 //   return (0);
 // }

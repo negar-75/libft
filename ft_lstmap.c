@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:45:40 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/08 15:47:18 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/15 15:14:11 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!new_node)
 		{
 			del(new_content);
-			ft_lstclear(&new_list, del);
+			ft_lstclear(&new_list, (*del));
 			return (new_list);
 		}
 		ft_lstadd_back(&new_list, new_node);
@@ -55,10 +55,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 //     head->next->next = malloc(sizeof(t_list));
 //     head->next->next->content = ft_strdup("3000");
 //     head->next->next->next = NULL;
-
 //     t_list *mapped_list = ft_lstmap(head, func, del_node);
-
-//     // Print the linked list
 //     t_list *current = mapped_list;
 //     while (current != NULL) {
 //         if (current -> next == NULL)
@@ -67,5 +64,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 //           printf("%zu -> ", *(size_t*)(current->content));
 //         current = current->next;
 //     }
+//     ft_lstclear(&head,free);
+//     ft_lstclear(&mapped_list,free);
 //    return (0);
 // }
