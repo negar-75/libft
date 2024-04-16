@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:37:11 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/08 15:37:18 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/16 15:22:19 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	t_list	*head;
 
 	head = lst;
-	while (head)
+	if (head && f)
 	{
-		f(head->content);
-		head = head->next;
+		while (head)
+		{
+			f(head->content);
+			head = head->next;
+		}
 	}
 }
 
