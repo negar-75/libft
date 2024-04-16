@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:34:39 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/08 15:34:46 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/16 15:26:38 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !lst->content)
+	if (!lst || !lst->content || !del)
 		return ;
 	del(lst->content);
 	free(lst);
