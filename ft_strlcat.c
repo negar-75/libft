@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:55:35 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/09 15:55:39 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/15 18:27:21 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	result;
 
+	if (!dst && !size)
+		return (0);
 	des_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	if (size <= des_len)
@@ -34,20 +36,20 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[des_len + i] = '\0';
 	return (result);
 }
-
+// #include<string.h>
 // int main ()
 // {
 //     char dest[30];
-//     size_t result1;
+//     // size_t result1;
 
-//     memset(dest, 0, 30);
+//     memset(dest,0,30);
 
-//     result1 = ft_strlcat(dest, "123", 0); // Pass size of dest array
-//     printf("%zu\n", result1);
-//     printf("%s\n", dest);
-//     // size_t result = strlcat(dest, "123", 0); // Pass size of dest array
-//     // printf("%zu\n", result);
+//     // result1 = ft_strlcat(dest, "123", 4); // Pass size of dest array
+//     // printf("%zu\n", result1);
 //     // printf("%s\n", dest);
-//     printf("%d\n", strcmp(dest, ""));
+//     size_t result = strlcat(dest, "123", 4); // Pass size of dest array
+//     printf("%zu\n", result);
+//     printf("%s\n", dest);
+//     // printf("%d\n", strcmp(dest, ""));
 //     return (0);
 // }

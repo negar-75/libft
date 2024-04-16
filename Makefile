@@ -9,7 +9,8 @@ BONUS_SRCS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_
 		ft_lstnew.c ft_lstsize.c
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
-
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 all: $(NAME)
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)

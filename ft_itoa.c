@@ -6,7 +6,7 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:54:52 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/08 15:30:10 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/16 15:03:00 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	num_len(long int nbr)
 	return (i);
 }
 
-char	*ft_zero(char *arr)
+static char	*ft_zero(char *arr)
 {
 	arr[0] = '0';
 	return (arr);
@@ -71,10 +71,10 @@ char	*ft_itoa(int nbr)
 // 	printf("Testing ft_itoa(%d)\n", nbr);
 
 // 	if (strcmp(result, expected) == 0)
-// 		printf("Test passed: Returned \"%s\" as 
+// 		printf("Test passed: Returned \"%s\" as
 //      expected\n", result);
 // 	else
-// 		printf("Test failed: Returned \"%s\", 
+// 		printf("Test failed: Returned \"%s\",
 //       expected \"%s\"\n", result, expected);
 
 // 	free(result);
@@ -84,7 +84,7 @@ char	*ft_itoa(int nbr)
 // {
 // 	// printf("1. Test with positive numbers:\n");
 // 	// test_ft_itoa(12345, "12345");
-// 	// test_ft_itoa(987654321, "987654321");	
+// 	// test_ft_itoa(987654321, "987654321");
 // 	// printf("\n2. Test with negative numbers:\n");
 // 	// test_ft_itoa(-12345, "-12345");
 // 	// test_ft_itoa(-987654321, "-987654321");

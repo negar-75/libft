@@ -6,13 +6,13 @@
 /*   By: nnasiri <nnasiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:58:29 by nnasiri           #+#    #+#             */
-/*   Updated: 2024/04/12 11:36:53 by nnasiri          ###   ########.fr       */
+/*   Updated: 2024/04/16 15:05:50 by nnasiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_world_count(char const *s, char c)
+static int	ft_word_count(char const *s, char c)
 {
 	int	world_count;
 	int	i;
@@ -31,7 +31,7 @@ static int	ft_world_count(char const *s, char c)
 	return (world_count);
 }
 
-char	*ft_allocate_word(char const *s, char c)
+static char	*ft_allocate_word(char const *s, char c)
 {
 	int		i;
 	char	*new_word;
@@ -61,7 +61,7 @@ static void	free_split(char **arr, int j)
 	free(arr);
 }
 
-static char	**split(char **arr, const char *s, char c)
+static char	**split_str(char **arr, const char *s, char c)
 {
 	int	i;
 	int	j;
@@ -94,11 +94,11 @@ char	**ft_split(char const *s, char c)
 	int		words;
 	char	**arr;
 
-	words = ft_world_count(s, c);
+	words = ft_word_count(s, c);
 	arr = (char **)malloc((words + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	return (split(arr, s, c));
+	return (split_str(arr, s, c));
 }
 
 // int	main(void)
