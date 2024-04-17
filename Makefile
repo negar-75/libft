@@ -13,9 +13,9 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 	$(CC) $(CFLAGS) -c $< -o $@
 all: $(NAME)
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 bonus: $(OBJS) $(BONUS_OBJS)
-	ar rc $(NAME) $(BONUS_OBJS) $(OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS) $(OBJS)
 clean:
 	rm -rf $(OBJS) $(BONUS_OBJS)
 fclean: clean
